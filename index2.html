@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="./estilos/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalago de Productos ::Jerson</title>
+    <script src="./funcionalidad.js"></script>
+    <script src="./buscar.js"></script>
+    
+
+</head>
+<body onload="primeraFuncion()">
+    
+        <!--Contenedor de todo el cuerpo de la pagina-->
+        <div class="container " id="productos" >
+
+
+            <nav  class="navbar navbar-expand-lg bg-success" >
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+
+                    <img src="img/logoo-pc.png" alt="" style="max-width: 70px; max-height: 70px;">
+
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav ">
+                     <ul class="navbar-nav nav-fill w-100">
+                      <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Inicio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Nosotros</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-white">servicios</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-white">Contactanos</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" action="" href="registro-cliente.html" target="_blank" style="background-color: green; color:white;cursor: pointer;"><span><img src="img/registro.png" alt="" width="27px"></span> Registrarse</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="buscarP">
+                        <button class="btn btn-secondary" type="submit">Buscar</button>
+                      </form>
+                  </div>
+                </div>
+            </nav>
+
+            <!--Logo contacto whatsapp-->
+
+            <div class="whatsapp">
+
+                <img src="img/gr_whatsapp.png" alt="">
+            </div>
+
+
+                                   <!-- Ver carrito de compra -->
+        <a class="btn btn-outline-success btn-sm" onclick="actualizarLista()" href="#" data-bs-toggle="modal" data-bs-target="#carritoCompra" style="padding: 10px 10px; margin-bottom: 5px;">
+            Ir al carrito
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+        </a>
+
+       
+
+         <!-- Modal carrito de compra-->
+         <div class="modal fade" id="carritoCompra" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito de compra</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="listaCarrito" class="modal-body">
+                        El carrito está vacio.
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <div class="selector-cantidad">
+                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                            <input type="text" value="1" class="carrito-item-cantidad bg-dark-subtle " disabled>
+                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="compraca()">Realizar la compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            <!--Inicio catalogo de productos-->
+                <div id="productos">
+
+                        <div class="row">
+
+                            <section class="slider">
+                                <img src="img/slider-.jpg" alt="" width="100%">
+                    
+                            </section>
+
+      
+
+                            <!--Seccion de 4 productos en pantalla de escritorio-->
+                            <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
+                                <h5 class="prolist">Laptop gamer 1</5>
+                                    <img src="img/catalago3.jpg " alt="" class="efecto" width="200px " height="200px">
+                                    
+                                    <h6 class="costo"> Precio s/ 1649.90</h6>
+                                    <div class="descripcion">
+                                        <p style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum exercitationemosam optio voluptatem pa.</p>
+                
+                                        <p><a class="btn btn-primary mx-auto d-block" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
+                                            
+                            
+                                    </div>  
+                                
+                            </div>
+
+                            <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
+                                <h5 class="prolist">Laptop gamer 2</5>
+                                <img src="img/catalago2.jpg" alt="" class="efecto" width="250px" height="200px">
+                                <h6 class="costo"> Precio s/ 2400.50</h6>
+                                <div class="descripcion">
+                                    <p style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum exercitationemosam optio voluptatem pa.</p>
+            
+                                    <p><a class="btn btn-primary mx-auto d-block" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
+                                        
+                        
+                                </div>  
+                            
+                            </div>
+
+
+                            <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
+                                <h5 class="prolist">Laptop gamer 3</5>
+                                <img src="img/catalago3.jpg" alt="" class="efecto" width="250px" height="200px">
+                                <h6 class="costo"> Precio s/ 1900.90</h6>
+                                <div class="descripcion">
+                                    <p style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum exercitationemosam optio voluptatem pa.</p>
+            
+                                    <p><a class="btn btn-primary mx-auto d-block" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
+                                        
+                        
+                                </div>  
+                            
+                            </div>
+
+                            <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
+                                <h5 class="prolist">Laptop gamer 4</5>
+                                <img src="img/catalago5.jpg" alt="" class="efecto" width="250px" height="200px">
+                                <h6 class="costo"> Precio s/ 2750.90</h6>
+                                <div class="descripcion">
+                                    <p style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum exercitationemosam optio voluptatem pa.</p>
+            
+                                    <p><a class="btn btn-primary mx-auto d-block" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
+                                        
+                        
+                                </div>  
+                            
+                            </div>
+
+
+                              <!--Seccion de 4 productos en pantalla de escritorio-->
+                              <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
+                                <h5 class="prolist">Laptop gamer 5</5>
+                                <img src="img/catalago7.jpg " alt="" class="efecto" width="200px " height="200px">
+
+                                <h6 class="costo"> Precio s/ 1649.90</h6>
+                                <div class="descripcion">
+                                    <p style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum exercitationemosam optio voluptatem pa.</p>
+            
+                                    <p><a class="btn btn-primary mx-auto d-block" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
+                                        
+                        
+                                </div>  
+                            
+                        </div>
+
+                        <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
+                            <h5 class="prolist">Laptop gamer 6</5>
+                            <img src="img/catalago2.jpg" alt="" class="efecto" width="250px" height="200px">
+                            <h6 class="costo"> Precio s/ 1649.90</h6>
+                            <div class="descripcion">
+                                <p style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum exercitationemosam optio voluptatem pa.</p>
+        
+                                <p><a class="btn btn-primary mx-auto d-block" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
+                                    
+                    
+                            </div>  
+                        
+                        </div>
+
+
+                        <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
+                            <h5 class="prolist">Laptop gamer 7</5>
+                            <img src="img/catalago5.jpg" alt="" class="efecto" width="250px" height="200px">
+                            <h6 class="costo"> Precio s/ 1649.90</h6>
+                            <div class="descripcion">
+                                <p style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum exercitationemosam optio voluptatem pa.</p>
+        
+                                <p><a class="btn btn-primary mx-auto d-block" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
+                                    
+                    
+                            </div>  
+                        
+                        </div>
+
+                        <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
+                            <h5 class="prolist">Laptop gamer 8</5>
+                            <img src="img/catalago6.jpg" alt="" class="efecto" width="250px" height="200px">
+                            <h6 class="costo"> Precio s/ 1780.50</h6>
+                            <div class="descripcion">
+                                <p style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum exercitationemosam optio voluptatem pa.</p>
+        
+                                <p><a class="btn btn-primary mx-auto d-block" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
+                                    
+                    
+                            </div>  
+                        
+                        </div>
+
+                          <!--Seccion de 4 productos en pantalla de escritorio-->
+                          <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
+                            <h5 class="prolist">Laptop gamer 9</5>   
+                            <img src="img/catalago3.jpg " alt="" class="efecto" width="200px " height="200px">
+
+                            <h6 class="costo"> Precio s/ 1649.90</h6>
+                            <div class="descripcion">
+                                <p style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum exercitationemosam optio voluptatem pa.</p>
+        
+                                <p><a class="btn btn-primary mx-auto d-block" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
+                                    
+                    
+                            </div>  
+                        
+                    </div>
+
+                    <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
+                        <h5 class="prolist">Hp laptop 10</5>
+                        <img src="img/catalago7.jpg" alt="" class="efecto" width="250px" height="200px">
+                        <h6 class="costo"> Precio s/ 1300.90</h6>
+                        <div class="descripcion">
+                            <p style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum exercitationemosam optio voluptatem pa.</p>
+    
+                            <p><a class="btn btn-primary mx-auto d-block" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
+                                
+                
+                        </div>  
+                    
+                    </div>
+
+
+                    <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
+                        <h5>Laptop gamer 11</5>
+                        <img src="img/catalago6.jpg" alt="" class="efecto" width="250px" height="200px">
+                        <h6 class="costo"> Precio s/ 1649.90</h6>
+                        <div class="descripcion">
+                            <p style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum exercitationemosam optio voluptatem pa.</p>
+    
+                            <p><a class="btn btn-primary mx-auto d-block" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
+                                
+                
+                        </div>  
+                    
+                    </div>
+
+                    <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
+                        <h5>Laptop gamer 12</5>
+                        <img src="img/catalago5.jpg" alt="" class="efecto" width="250px" height="200px">
+                        <h6 class="costo"> Precio s/ 1649.90</h6>
+                        <div class="descripcion">
+                            <p style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum exercitationemosam optio voluptatem pa.</p>
+    
+                            <p><a class="btn btn-primary mx-auto d-block" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
+                                
+                
+                        </div>  
+                    
+                    </div>
+
+                    <!--Formulario de contacto-->
+
+                    <div class="formularioconten">
+
+                
+                        <form class="formulario " action="" onsubmit="return formularioDatos()">
+                    
+                            <h2 class="tituloc">CONTACTANOS</h2>
+                            
+                            <input class="cajasf" type="text" id="nombre"  placeholder="Nombre"><div id="texto"></div>
+                            <input class="cajasf" type="text"  id="apellido" placeholder="Apellido">
+                            <input class="cajasf" type="text" id="num" placeholder="Numero de Celular">
+                            <input class="cajasf" type="text" id="correo" placeholder="Correo Electronico">
+                            <p>Comentarios:</p>
+                            <br>
+                            <input class="cajasf" id="comentarios" type="text"  placeholder="">
+                            <p class="termino1"> <input type="checkbox" required>&nbsp;Estoy de Acuerdo con los <a class="termino2" href="">Terminos y condiciones</a> </p>
+                            
+                         <input class="btnenv btn-primary " type="submit" value=" ENVIAR">
+
+                         
+                         
+                           
+                                </form>
+                    
+                    
+                    
+                    
+                    </div>
+                          
+                    
+                    <!--Pie de pagina-->
+
+                    <footer class="foot">
+
+                       
+                
+                        <h2 id="text-footer" > Siguenos en nuestras redes </h2>
+
+                        
+                        <div class="img-foot">
+
+               
+                            <img src="img/instagram.png" alt="">
+                            <img src="img/facebook.png" alt="">
+                            <img src="img/twiter.png" alt="">
+                            <img src="img/youtube.png" alt="">
+
+
+                        </div>
+
+                    </footer>
+
+                           
+
+
+                         <!-- Modal -->
+                            <div class="modal fade" id="modalEntrada" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                             <div class="modal-dialog">
+                             <div class="modal-content">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  <div class="modal-body">
+                                  <img class="mx-auto d-block" src="img/super_oferta.webp"  style="width: 320px;">
+                                 </div>
+                                </div>
+                             </div>
+                          </div>
+
+
+
+
+
+                        
+
+                </div>
+
+    
+
+        </div>
+
+           <!--Final Contenedor de todo el cuerpo de la pagina-->
+
+
+           <script src="js/bootstrap.js"></script>
+
+    
+           <script src="./formConta.js"></script>
+
+
+
+
+           
+        
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
